@@ -15,10 +15,10 @@
             - "{{ web_pkg }}"
             - "{{ firewall_okg }}"
             - "{{ pearl_pkg }}"
-          state: latest
+          state: absent
       - name: open the port for rule
         firewalld:
           service: "{{ rule }}"
           permanent: true
           immediate: true
-          state: enabled
+          state: disabled
