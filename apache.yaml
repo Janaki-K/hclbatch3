@@ -7,3 +7,12 @@
     tasks:
       - name: Install an Epel-release
         command: yum-config-manager --enable epel
+      - name: install apache
+        yum:
+          name: httpd
+          state: latest
+      - name: start apache service
+        service:
+          name: httpd
+          enabled: true
+          state: started
