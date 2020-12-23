@@ -12,11 +12,11 @@
         user:
           name: "{{ item.name }}"
           state: present
-          groups: "{{ item.group }}"
+          groups: "{{ item.groups }}"
         with_items:
-          - {name: "jane",groups: 'weblogic'}
+          - { name: 'jane',groups: 'weblogic'}
       - name: install multiple package with items
         yum:
-          name: "{{ items }}"
+          name: "{{ item }}"
           state: latest
         with_items: "{{ mail_services }}"
