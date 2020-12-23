@@ -8,7 +8,9 @@
       - name: Install an Epel-release
         command: yum-config-manager --enable epel
       - name: install apache
-        shell: yum install httpd 
+        yum:
+          name: httpd
+          state: installed
       - name: start apache service
         service:
           name: httpd
