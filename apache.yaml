@@ -6,8 +6,4 @@
     
     tasks:
       - name: Install an Epel-release
-        yum:
-          name: epel-release 
-          update_cache: yes
-          state: latest
- 
+        command: yum-config-manager --enable epel
