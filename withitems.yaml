@@ -17,6 +17,6 @@
           - { name: 'jane',groups: 'weblogic'}
       - name: install multiple package with items
         yum:
-          name: "{{ item }}"
-          state: latest
+          name: "{{ mail_services }}"
+          state: present
         with_items: "{{ mail_services }}"
