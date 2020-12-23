@@ -16,4 +16,9 @@
             - "{{ firewall_okg }}"
             - "{{ pearl_pkg }}"
           state: latest
-      
+      - name: open the port for rule
+        firewalld:
+          service: "{{ rule }}"
+          permanent: true
+          immediate: true
+          state: enabled
