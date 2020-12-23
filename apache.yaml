@@ -40,5 +40,9 @@
           path: /etc/httpd/conf/httpd.conf
           line: ServerName www.client1.example.com:80
           insertafter: "#ServerName"
+      - name: update its entry in /etc/host 
+        lineinfile:
+          path: /etc/hosts
+          line: 34.213.13.255 www.client1.example.com
       
           
