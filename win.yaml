@@ -1,0 +1,11 @@
+---
+# yaml document begin with document seprator
+  - #this minus indicate list of item in python
+    #the target where your play will run
+    hosts: win
+    tasks:
+      - name: create user
+        win_user:
+          name: ansible
+          password: "@ansible123"
+          state: present
