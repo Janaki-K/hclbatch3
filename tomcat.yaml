@@ -6,7 +6,7 @@
     vars:
       req_java: java-1.8.0-openjdk
       set_java: jre-1.8.0-openjdk
-      req_tomcat_var: 7.0.107
+      req_tomcat_var: 9.0.41
       tomcat_port: 8090
     tasks:
       - name: update repos
@@ -31,6 +31,8 @@
           src: "/usr/local/apache-tomcat-{{req_tomcat_var}}.tar.gz"    
           dest: /usr/local/
           remote_src: yes
+      - name: remote latest directory
+        command: rm -rf /usr/local/latest  
       - name: rename tomcat home directory
         command: mv /usr/local/apache-tomcat-{{req_tomcat_var}} /usr/local/latest
       - name: replacing default port with custom port
