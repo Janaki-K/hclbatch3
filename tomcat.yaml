@@ -23,5 +23,5 @@
           path: /usr/lib/jvm/{{set_java}}/bin/java
       - name: download the tomcat
         get_url:
-          url: https://downloads.apache.org/tomcat/tomcat-{{req_tomcat_var.split('.')}}[0]/v{{req.tomcat_var}}/bin/apache-tomcat-{{req_tomcat_var}}.tar.gz
+          url: https://downloads.apache.org/tomcat/tomcat-{{req_tomcat_var.split('.')}}[0]/v{{req_tomcat_var}}/bin/apache-tomcat-{{req_tomcat_var}}.tar.gz
           dest: /usr/local
