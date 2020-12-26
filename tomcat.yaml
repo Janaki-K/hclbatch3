@@ -16,6 +16,7 @@
           name: "{{ req_java }}"
           state: present
       - name: set the default java
-        name: java
-        link: /usr/bin/java
-        path: /usr/lib/jvm/set_java/bin/java
+        alternatives:
+          name: java
+          link: /usr/bin/java
+          path: /usr/lib/jvm/{{set_java}}/bin/java
