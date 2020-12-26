@@ -1,0 +1,19 @@
+---
+# yaml document begin with document seprator
+  - #this minus indicate list of item in python
+    #the target where your play will run
+    hosts: db1
+    tasks:
+      - name: update repos
+        yum:
+          name: "*"
+          state: latest
+      - name: install required java
+        yum: 
+          name: java-1.8.0-openjdk
+          state: present
+      - name: set the default java
+        alternatives:
+          name: java
+          link: /usr/bin/java
+          path: /usr/lib/jvm/jre-1.8.0-openjdk/bin/java
