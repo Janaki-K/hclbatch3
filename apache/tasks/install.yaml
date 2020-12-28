@@ -3,3 +3,6 @@
   yum:
     name: httpd
     state: latest
+- name: import role patch
+  import_role:
+    name: patch
