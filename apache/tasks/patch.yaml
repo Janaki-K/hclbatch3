@@ -7,5 +7,5 @@
     msg: "{{ app_proc_check.stdout }}"
 - name: Decision point to start patching
   fail:
-    msg="{{ inventory_hostname }}" having running application , please stop first and then attempt patching
-  when: appr_proc_check.stdout == "process_running"   
+    msg="{{ inventory_hostname }} having running application , please stop first and then attempt patching"
+  when: app_proc_check.stdout == "process_running"   
