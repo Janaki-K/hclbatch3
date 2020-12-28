@@ -1,6 +1,6 @@
 ---
-# handlers file for apache
-- name: restart apache
+- name: Start and Enabled HTTPD
   service:
     name: httpd
     state: restarted
+    enabled: yes
