@@ -9,3 +9,23 @@
   fail:
     msg="{{ inventory_hostname }} having running application , please stop first and then attempt patching"
   when: app_proc_check.stdout == "process_running"   
+- name: current kernal version
+  shell: uname -r
+  register: curr_ker
+- name: intializing patching
+  yum:
+    name: kernel
+    state: latest
+  register: yum_update
+- debug:
+    msg: "kernal has been update"
+  when: yum_update.rc == 0
+- name: check if reboot is required or not
+  shell: kernel_new=$(rpm -qa --last kernel | head -1 | awk '{pring $1}' | sed 's/kernal-//g') kernel_now=$(uname -r); if [[ $kernel_new != $kernel_now]]; then echo "reboot is required" else "echo "reboot is not required"; fi
+  ignore_error: true
+  register: reboot_check
+- debug:
+    msg: "{{ reboot_check_.stdout}}
+- name: rebooting after patching
+  command: reboot
+  when: reboot_check.stdout == "reboot is required"
