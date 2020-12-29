@@ -46,7 +46,7 @@
 
     - name: Refresh inventory to ensure new instances exist in inventory
       meta: refresh_inventory
-
+#---------------------------------------------------------------------------#
 -
 
   # Target: where our play will run and options it will run with
