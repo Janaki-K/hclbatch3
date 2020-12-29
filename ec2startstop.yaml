@@ -8,7 +8,7 @@
     tasks:
     - name: stop an instance
       ec2:
-        instance_ids: i-0a0faf3745bc2be41	
+        instance_ids: i-02c5ae0ffe3bf32eb	
         region: us-east-2
         state: 'stopped'
         wait: yes
@@ -26,7 +26,7 @@
         - never 
     - name: terminate an instance
       ec2:
-        instance_ids: i-0a0faf3745bc2be41	
+        instance_ids: i-02c5ae0ffe3bf32eb	
         region: us-east-2
         state: 'absent'
         wait: yes
