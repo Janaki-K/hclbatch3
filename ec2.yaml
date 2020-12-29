@@ -1,0 +1,18 @@
+---
+# yaml document begin with document seprator
+  - #this minus indicate list of item in python
+    #the target where your play will run
+    hosts: localhost
+    connection: local
+    gather_facts: false
+    tasks:
+    - name: creating an ec2 instance
+      ec2:
+        instance_type: t2.micro
+        image: ami-0a0ad6b70e61be944
+        key_name: ansible
+        region: us-east-2
+        group_id: sg-03d997a50a494ec49
+        instance_tags:
+          Name: AWS_Instance_gopal
+          Env: Dev

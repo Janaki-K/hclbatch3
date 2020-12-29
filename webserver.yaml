@@ -3,5 +3,5 @@
    hosts: db1
    roles:
      - patch
-#     - apache
+     - apache
       
