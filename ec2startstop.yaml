@@ -14,6 +14,7 @@
         wait: yes
       tags:
         - stop 
+        - never
     - name: start an instance
       ec2:
         instance_ids: i-0a0faf3745bc2be41	
@@ -21,7 +22,8 @@
         state: running
         wait: yes
       tags:
-        - start 
+        - start
+        - never 
     - name: terminate an instance
       ec2:
         instance_ids: i-0a0faf3745bc2be41	
@@ -30,4 +32,5 @@
         wait: yes
       tags:
         - terminate
+        - never
     
