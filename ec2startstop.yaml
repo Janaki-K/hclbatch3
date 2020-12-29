@@ -7,28 +7,28 @@
     gather_facts: false
     tasks:
     - name: stop an instance
-      ec2instance_facts:
+      ec2:
         instance_ids: i-0a0faf3745bc2be41	
-        regions: us-east-2
-        state: stopped
+        region: us-east-2
+        state: 'stopped'
         wait: yes
       tags:
         - stop 
         - never
     - name: start an instance
-      ec2_instance_facts:
+      ec2:
         instance_ids: i-0a0faf3745bc2be41	
-        regions: us-east-2
-        state: running
+        region: us-east-2
+        state: 'running'
         wait: yes
       tags:
         - start
         - never 
     - name: terminate an instance
-      ec2_instance_facts:
+      ec2:
         instance_ids: i-0a0faf3745bc2be41	
-        regions: us-east-2
-        state: absent
+        region: us-east-2
+        state: 'absent'
         wait: yes
       tags:
         - terminate
